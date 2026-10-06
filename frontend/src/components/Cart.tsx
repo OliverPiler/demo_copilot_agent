@@ -30,7 +30,7 @@ export default function Cart() {
     }, 0),
   );
   const discount = roundCurrency(subtotal * 0.05);
-  const shipping = items.length > 0 ? 10 : 0;
+  const shipping = items.length > 0 ? (subtotal > 100 ? 0 : 25) : 0;
   const grandTotal = roundCurrency(subtotal - discount + shipping);
   const surface = darkMode ? 'bg-gray-800 text-light' : 'bg-white text-gray-800';
   const mutedText = darkMode ? 'text-gray-400' : 'text-gray-600';
